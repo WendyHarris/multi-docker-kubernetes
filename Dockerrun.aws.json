@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "wendyharris/multi-client",
+            "hostname": "client",
+            "essential": false 
+        },
+        {
+            "name": "server",
+            "image": "wendyharris/multi-server",
+            "hostname": "api",
+            "essential": false 
+        },
+        {
+            "name": "worker",
+            "image": "wendyharris/multi-worker",
+            "hostname": "worker",
+            "essential": false 
+        },
+        {
+            "name": "nginx",
+            "image": "wendyharris/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"] 
+        }
+    ]
+}
