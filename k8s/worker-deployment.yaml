@@ -14,5 +14,4 @@ spec:
     spec:
       containers:
         - name: worker
-          image: stephengrider/multi-worker
-          
+          image: wendyharris/multi-worker
