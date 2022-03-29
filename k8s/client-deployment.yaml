@@ -9,7 +9,7 @@ spec:
       component: web 
   template: 
     metadata:
-      label:
+      labels:
         component: web
     spec: 
       containers:
@@ -17,4 +17,4 @@ spec:
           image: wendyharris/multi-client
           ports: 
             - containerPort: 3000
-            
+
